@@ -1,0 +1,47 @@
+/*  footer section */
+footer {
+	width: 100%;
+	padding: 20px 40px;
+	text-align: left;
+	font-size: 11px;
+	overflow: hidden;
+	float: left;
+	/*opacity: 0.6;
+	 filter:alpha(opacity=60);*/ /* For IE8 and earlier */
+}
+
+footer table {
+	width: 100%;
+	color: white;
+	font-size: medium;
+	padding-top:20px;
+}
+
+.subItem {
+	padding-left:20px;
+ 	font-size: smaller;
+}
+footer table th a {
+	/*font-size: medium;*/
+	color: #599100;
+}
+footer table td  {
+	font-size:smaller;
+	color: white;
+}
+
+footer table td  a{
+	color: white;
+    text-decoration: none;
+}
+
+footer #privacy {
+	float: right;
+}
+
+footer #footer_divider {
+	height: 2px;
+	width:100%;
+	background-color: #599100;
+	/*background-color: #F36B0A;*/
+}

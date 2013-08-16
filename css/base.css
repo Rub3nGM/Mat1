@@ -1,0 +1,38 @@
+html {
+	background-image: url(../images/fundo_papel_dourado.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	/*background-repeat:  none;*/
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	font-size: 15px;
+	color: #593741;
+	overflow-y: scroll;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	color:white;
+}
+
+
+#main {
+	margin-top: 30px;
+	width: 100%;
+	float: left;
+}
+
+.center{
+	text-align:center;
+}
+
+h1 {
+	color: #F36B0A;
+}
+h2{
+	color: #599100;
+}
