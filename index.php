@@ -17,7 +17,7 @@
 	<body>
 		<div id="main">
 
-			<div class="ContentFlow" style="margin-top: 100px;" id="myFantasicFlow" >
+			<div class="ContentFlow"  id="myFantasicFlow" >
 				<div class="loadIndicator">
 					<div class="indicator"></div>
 				</div>
@@ -44,7 +44,7 @@
 			</div>
 		</div>
 
-		<?php include "footer.html"; ?>
-
+	<?php include "footer.html"; ?>
 	</body>
+	
 </html>

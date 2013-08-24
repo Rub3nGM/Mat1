@@ -8,6 +8,7 @@ footer {
 	float: left;
 	/*opacity: 0.6;
 	 filter:alpha(opacity=60);*/ /* For IE8 and earlier */
+	background: rgba(135, 135, 135, .5);;
 }
 
 footer table {
@@ -23,7 +24,7 @@ footer table {
 }
 footer table th a {
 	/*font-size: medium;*/
-	color: #599100;
+	color: #F36B0A;
 }
 footer table td  {
 	font-size:smaller;
