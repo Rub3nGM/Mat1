@@ -8,11 +8,19 @@ footer {
 	float: left;
 	/*opacity: 0.6;
 	 filter:alpha(opacity=60);*/ /* For IE8 and earlier */
+}
+
+#footerContent{
 	background: rgba(135, 135, 135, .5);;
+	position:absolute;
+    left:0;
+    right:0;
 }
 
 footer table {
-	width: 100%;
+	width: 80%;
+	margin-left:auto;
+	margin-right: auto;
 	color: white;
 	font-size: medium;
 	padding-top:20px;
@@ -43,6 +51,6 @@ footer #privacy {
 footer #footer_divider {
 	height: 2px;
 	width:100%;
-	background-color: #599100;
-	/*background-color: #F36B0A;*/
+	/*background-color: #599100;*/
+	background-color: #F36B0A;
 }

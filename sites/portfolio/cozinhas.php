@@ -5,31 +5,37 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title >Materiare</title>
+		<title >Materiare Cozinhas</title>
 
 		<link rel="stylesheet" type="text/css" href="/Materiare/css/base.css"  />
 		<link rel="stylesheet" type="text/css" href="/Materiare/css/contentflow.css"/>
 		<script type="text/javascript" src="/Materiare/js/contentflow.js" ></script>
-		<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+		
+		<script>
+			var myNewFlow = new ContentFlow('myFantasicFlow', {
+				reflectionHeight : 0.3,
+				scrollWheelSpeed : 0,
+				startItem : 0,
+			});
+		</script>
 
 	</head>
 	<body>
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/Materiare/header.html'); ?>
 
 		<div id="main">
-
-			<div class="ContentFlow" style="margin-top: 100px;" id="myFantasicFlow" >
+			<div class="ContentFlow"  id="myFantasicFlow" >
 				<div class="loadIndicator">
 					<div class="indicator"></div>
 				</div>
 				<div class="flow">
-					<img class="item" src="images/portfolio/cozinhas/castanho.jpg" target="#" title="Castanho" href="/Materiare/sites/portfolio/cozinhas/castanho.php" />
-					<img class="item" src="images/portfolio/cozinhas/branco.jpg" title="Branco" href="/Materiare/sites/portfolio/cozinhas/branco.php"/>
-					<img class="item" src="images/portfolio/cozinhas/preto.jpg" title=" Preto" href="/Materiare/sites/portfolio/cozinhas/preto.php"/>
-					<img class="item" src="images/portfolio/cozinhas/inox.jpg" title="Inox" target="_top" href="/Materiare/sites/portfolio/cozinhas/inox.php" />
-					<img class="item" src="images/portfolio/cozinhas/verde.jpg" title="Verde" href="/Materiare/sites/portfolio/cozinhas/verde.php"  />
-					<img class="item" src="images/portfolio/cozinhas/vermelho.jpg" title="Vermelho" href="/Materiare/sites/portfolio/cozinhas/vermelho.php" />
-					<img class="item" src="images/portfolio/cozinhas/outros.jpg" title="Outros" href="/Materiare/sites/portfolio/cozinhas/outros.php" />
+					<img class="item" src="/Materiare/images/portfolio/cozinhas/cores/castanho.jpg" target="#" title="Castanho" href="/Materiare/sites/portfolio/cozinhas/castanho.php" />
+					<img class="item" src="/Materiare/images/portfolio/cozinhas/cores/branco.jpg" title="Branco" href="/Materiare/sites/portfolio/cozinhas/branco.php"/>
+					<img class="item" src="/Materiare/images/portfolio/cozinhas/cores/preto.jpg" title=" Preto" href="/Materiare/sites/portfolio/cozinhas/preto.php"/>
+					<img class="item" src="/Materiare/images/portfolio/cozinhas/cores/inox.jpg" title="Inox" target="_top" href="/Materiare/sites/portfolio/cozinhas/inox.php" />
+					<img class="item" src="/Materiare/images/portfolio/cozinhas/cores/verde.jpg" title="Verde" href="/Materiare/sites/portfolio/cozinhas/verde.php"  />
+					<img class="item" src="/Materiare/images/portfolio/cozinhas/cores/vermelho.jpg" title="Vermelho" href="/Materiare/sites/portfolio/cozinhas/vermelho.php" />
+					<img class="item" src="/Materiare/images/portfolio/cozinhas/cores/outros.jpg" title="Outros" href="/Materiare/sites/portfolio/cozinhas/outros.php" />
 				</div>
 				<div class="globalCaption">
 

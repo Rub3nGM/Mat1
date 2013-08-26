@@ -11,7 +11,14 @@
 		<link rel="stylesheet" type="text/css" href="/Materiare/css/contentflow.css"/>
 		<script type="text/javascript" src="/Materiare/js/contentflow.js" ></script>
 		<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-
+		<script>
+			var myNewFlow = new ContentFlow('myFantasicFlow', {
+				reflectionHeight : 0.3,
+				scrollWheelSpeed : 0,
+				// startItem : 0,
+			});
+		</script>
+		
 	</head>
 		<?php include "header.html"; ?>
 	<body>
