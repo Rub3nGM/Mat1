@@ -6,7 +6,7 @@ div.content {
 }
 div.content a, div.navigation a {
 	text-decoration: none;
-	color: #777;
+	color: #F36B0A;
 }
 div.content a:focus, div.content a:hover, div.content a:active {
 	text-decoration: underline;
@@ -17,7 +17,7 @@ div.controls {
 }
 div.controls a {
 	padding: 5px;
-	font-size:medium;
+	/*font-size:medium;*/
 	font-weight: bold;
 }
 div.ss-controls {
