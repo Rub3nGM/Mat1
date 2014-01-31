@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -10,7 +10,6 @@
 		<link rel="stylesheet" type="text/css" href="/Materiare/css/base.css"  />
 		<link rel="stylesheet" type="text/css" href="/Materiare/css/contentflow.css"/>
 		<script type="text/javascript" src="/Materiare/js/contentflow.js" ></script>
-		<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
 
 	</head>
 	<body>
@@ -47,4 +46,4 @@
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/Materiare/footer.html'); ?>
 
 	</body>
-</html>
+</html> -->

@@ -22,65 +22,7 @@
 	background-image: none;
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='..images/coverflow/def/1x1_0.5_black.png');
 }
-.ContentFlow .scrollbar {
-	width: 50%;
-	height: 16px;
-	background: url(../images/coverflow/def/scrollbar_white.png) left center repeat-x;
-	overflow: visible;
-	position: relative;
-	z-index: 1;
-	visibility: hidden;
-	margin: 10px auto 0;
-}
-.ContentFlow .scrollbar .slider {
-	width: 16px;
-	height: 16px;
-	background: url(../images/coverflow/def/slider_white.png) center center no-repeat;
-	cursor: move;
-	position: absolute;
-}
-* html .ContentFlow .scrollbar .slider {
-	background-image: none;
-}
-* html .ContentFlow .scrollbar .slider .virtualSlider {
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src='../images/coverflow/def/slider_white.png');
-	height: 100%;
-}
-.ContentFlow .scrollbar .slider .position {
-	top: 120%;
-	font-size: 16px;
-	font-weight: 700;
-	color: silver;
-	position: absolute;
-	text-align: center;
-}
-.ContentFlow .globalCaption {
-	text-align: center;
-	font-weight: 700;
-	color: #FFF;
-	font-size: 14px;
-	height: 20px;
-	position: relative;
-	z-index: 1;
-	margin: 2em auto;
-}
-.ContentFlow .loadIndicator {
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: #000;
-	position: absolute;
-	z-index: 65000;
-}
-.ContentFlow .loadIndicator .indicator {
-	background: url(../images/coverflow/def/loader.gif) center center no-repeat;
-	width: 100%;
-	height: 100%;
-}
-* html .ContentFlow .loadIndicator .indicator {
-	height: 100px;
-}
+
 .ContentFlow {
 	position: relative;
 	overflow: hidden;
@@ -143,3 +85,111 @@
 .ContentFlow .flow .item .content, .ContentFlow .flow .item .reflection {
 	display: block;
 }
+
+.ContentFlow .scrollbar {
+	width: 50%;
+	height: 16px;
+	background: url(../images/coverflow/def/scrollbar_white.png) left center repeat-x;
+	overflow: visible;
+	position: relative;
+	z-index: 1;
+	visibility: hidden;
+	margin: 10px auto 0;
+}
+
+.ContentFlow .scrollbar .slider {
+	width: 16px;
+	height: 16px;
+	background: url(../images/coverflow/def/slider_white.png) center center no-repeat;
+	cursor: move;
+	position: absolute;
+}
+* html .ContentFlow .scrollbar .slider {
+	background-image: none;
+}
+* html .ContentFlow .scrollbar .slider .virtualSlider {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src='../images/coverflow/def/slider_white.png');
+	height: 100%;
+}
+.ContentFlow .scrollbar .slider .position {
+	top: 120%;
+	font-size: 16px;
+	font-weight: 700;
+	color: silver;
+	position: absolute;
+	text-align: center;
+}
+
+/*.scrollbar a{
+	font-weight: bold;
+	color: #F36B0A;
+	text-decoration: none;
+	display: block;
+	-webkit-border-radius: 1.6em;
+	-moz-border-radius: 1.6em;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+}*/
+.preButton:hover , .nextButton:hover{
+	cursor:pointer;
+	color: #444;
+	/*border-top: solid 1px #f8f8f8;*/
+}
+
+
+.preButton{
+	float:left;
+	margin-left:-10%;
+	font-weight: bold;
+	color: #F36B0A;
+	/*background: url(../images/coverflow/def/left.png);*/
+	/*color: #e7e5e5;*/
+	text-decoration: none;
+	display: block;
+	-webkit-border-radius: 1.6em;
+	-moz-border-radius: 1.6em;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+}
+
+.nextButton{
+	float:right;
+	margin-right:-10%;
+	font-weight: bold;
+	color: #F36B0A;
+	/*background: url(../images/coverflow/def/right.png);*/
+	/*color: #e7e5e5;*/
+	text-decoration: none;
+	display: block;
+	-webkit-border-radius: 1.6em;
+	-moz-border-radius: 1.6em;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+}
+
+
+.ContentFlow .globalCaption {
+	text-align: center;
+	font-weight: 700;
+	color: #FFF;
+	font-size: 14px;
+	height: 20px;
+	position: relative;
+	z-index: 1;
+	margin: 2em auto;
+}
+.ContentFlow .loadIndicator {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #000;
+	position: absolute;
+	z-index: 65000;
+}
+.ContentFlow .loadIndicator .indicator {
+	background: url(../images/coverflow/def/loader.gif) center center no-repeat;
+	width: 100%;
+	height: 100%;
+}
+* html .ContentFlow .loadIndicator .indicator {
+	height: 100px;
+}
+

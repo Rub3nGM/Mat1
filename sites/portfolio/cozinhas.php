@@ -9,13 +9,13 @@
 
 		<link rel="stylesheet" type="text/css" href="/Materiare/css/base.css"  />
 		<link rel="stylesheet" type="text/css" href="/Materiare/css/contentflow.css"/>
-		<script type="text/javascript" src="/Materiare/js/contentflow.js" ></script>
-		
+		<script type="text/javascript" src="/Materiare/js/contentflow.js" load="roundabout" ></script>
 		<script>
 			var myNewFlow = new ContentFlow('myFantasicFlow', {
 				reflectionHeight : 0.3,
-				scrollWheelSpeed : 0,
-				startItem : 0,
+				scrollWheelSpeed : 1.0,
+				scaleFactorLandscape: 0.98,
+				// startItem : 0,
 			});
 		</script>
 

@@ -76,8 +76,8 @@ var ContentFlowGlobal = {
 		}
 	},
 	init : function() {
-		this.addStylesheet(this.CSSBaseDir + "contentflow.css");
-		this.addStylesheet(this.CSSBaseDir + "mycontentflow.css");
+		// this.addStylesheet(this.CSSBaseDir + "contentflow.css");
+		// this.addStylesheet(this.CSSBaseDir + "mycontentflow.css");
 		this.loadAddOns = new Array();
 		if (this.scriptElement.getAttribute("load")) {
 			var A = this.loadAddOns = this.scriptElement.getAttribute("load").replace(/\ +/g, " ").split(" ");

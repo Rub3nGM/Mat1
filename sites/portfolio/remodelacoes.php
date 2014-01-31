@@ -8,43 +8,68 @@
 		<title >Materiare</title>
 
 		<link rel="stylesheet" type="text/css" href="/Materiare/css/base.css"  />
-		<link rel="stylesheet" type="text/css" href="/Materiare/css/contentflow.css"/>
-		<script type="text/javascript" src="/Materiare/js/contentflow.js" ></script>
-		<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+		<?php
+			include ($_SERVER['DOCUMENT_ROOT'] . '/Materiare/config.php');
+		?>
 
+		<link rel="stylesheet" href="/Materiare/css/gallerific_base.css" type="text/css" />
+		<link rel="stylesheet" href="/Materiare/css/galleriffic-2.css" type="text/css" />
+		<script type="text/javascript" src="/Materiare/js/jquery-1.3.2.js"></script>
+		<script type="text/javascript" src="/Materiare/js/jquery.galleriffic.js" ></script>
+		<script type="text/javascript" src="/Materiare/js/jquery.opacityrollover.js"></script>
+
+		<script type="text/javascript" src="/Materiare/teste.js"></script>
+		<!-- We only want the thunbnails to display when javascript is disabled -->
+		<!-- <script type="text/javascript">
+		document.write('<style>.noscript { display: none; }</style>');
+		</script> -->
+		
 	</head>
 	<body>
-		<?php include($_SERVER['DOCUMENT_ROOT'].'/Materiare/header.html'); ?>
-
+		<?php
+		// include($_SERVER['DOCUMENT_ROOT'].'/Materiare/header.html');
+		include (mRoot . '/Materiare/header.html');
+		?>
 		<div id="main">
 
-			<div class="ContentFlow" style="margin-top: 100px;" id="myFantasicFlow" >
-				<div class="loadIndicator">
-					<div class="indicator"></div>
+			<div id="gallery" class="content">
+				<div id="controls" class="controls"></div>
+				<div class="slideshow-container">
+					<div id="loading" class="loader"></div>
+					<div id="slideshow" class="slideshow"></div>
 				</div>
-				<div class="flow">
-					<img class="item" src="images/portfolio/moveiswc/castanho.jpg" target="#" title="Castanho" href="/Materiare/sites/portfolio/cozinhas/castanho.php" />
-					<img class="item" src="images/portfolio/moveiswc/branco.jpg" title="Branco" href="/Materiare/sites/portfolio/cozinhas/branco.php"/>
-					<img class="item" src="images/portfolio/moveiswc/preto.jpg" title=" Preto" href="/Materiare/sites/portfolio/cozinhas/preto.php"/>
-					<img class="item" src="images/portfolio/moveiswc/inox.jpg" title="Inox" target="_top" href="/Materiare/sites/portfolio/cozinhas/inox.php" />
-					<img class="item" src="images/portfolio/moveiswc/verde.jpg" title="Verde" href="/Materiare/sites/portfolio/cozinhas/verde.php"  />
-					<img class="item" src="images/portfolio/moveiswc/vermelho.jpg" title="Vermelho" href="/Materiare/sites/portfolio/cozinhas/vermelho.php" />
-					<img class="item" src="images/portfolio/moveiswc/outros.jpg" title="Outros" href="/Materiare/sites/portfolio/cozinhas/outros.php" />
-				</div>
-				<div class="globalCaption">
-
-				</div>
-				<div class="scrollbar" >
-					<div class="preButton"></div>
-					<div class="nextButton"></div>
-					<div class="slider">
-						<div class="position"></div>
-					</div>
-				</div>
+				<div id="caption" class="caption-container"></div>
 			</div>
+			<div id="thumbs" class="navigation">
+				<ul class="thumbs noscript">
+					<?php
+					$localFile = $_SERVER['SCRIPT_NAME'];
+
+					$imageDir = str_replace("sites", "images", $localFile);
+					$imageDir = str_replace(".php", "", $imageDir);
+
+					$files = glob(mRoot . $imageDir . "/*.jpg*");
+					$thumbs = glob(mRoot . $imageDir . "/thumbs/*.jpg*");
+
+					$filesNumber = count($files);
+
+					for ($i = 0; $i < $filesNumber; $i++) {
+						$image = $files[$i];
+						$image = str_replace(mRoot, "", $image);
+
+						$thumb = $thumbs[$i];
+						$thumb = str_replace(mRoot, "", $thumb);
+						echo '<li><a class="thumb" href="' . $image . '" title="ro_cl_1"><img src="' . $thumb . '" alt="ro_cl_1" width="90" height="90" /></a></li>';
+					}
+					?>
+				</ul>
+			</div>
+			<div style="clear: both;"></div>
+
 		</div>
 
-	<?php include($_SERVER['DOCUMENT_ROOT'].'/Materiare/footer.html'); ?>
-
+		<?php
+	include (mRoot . '/Materiare/footer.html');
+		?>
 	</body>
 </html>

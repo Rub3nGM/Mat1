@@ -1,54 +1,44 @@
 <?php
 //If the form is submitted
-if(isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 	//Check to make sure that the name field is not empty
-	if(trim($_POST['contactname'])=='') {
-		$hasError=true;
-	} 
-	else {
-		$name=trim($_POST['contactname']);
+	if (trim($_POST['contactname']) == '') {
+		$hasError = true;
+	} else {
+		$name = trim($_POST['contactname']);
 	}
 	//Check to make sure that the subject field is not empty
-	if(trim($_POST['subject'])=='') 
-	{
-		$hasError=true;
-	} else 
-	{
-		$subject=trim($_POST['subject']);
+	if (trim($_POST['subject']) == '') {
+		$hasError = true;
+	} else {
+		$subject = trim($_POST['subject']);
 	}
 	//Check to make sure sure that a valid email address is submitted
-	if(trim($_POST['email'])=='') 
-	{
-		$hasError=true;
-	} else if(!eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$",trim($_POST['email']))) 
-	{
-		$hasError=true;
-	} else 
-	{
-		$email=trim($_POST['email']);
+	if (trim($_POST['email']) == '') {
+		$hasError = true;
+	} else if (!preg_match("/^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$/", trim($_POST['email']))) {
+		$hasError = true;
+	} else {
+		$email = trim($_POST['email']);
 	}
 	//Check to make sure comments were entered
-	if(trim($_POST['message'])=='') 
-	{
-		$hasError=true;
-	} else 
-	{
-		if(function_exists('stripslashes')) 
-		{
-			$comments=stripslashes(trim($_POST['message']));
-		} else 
-		{
-			$comments=trim($_POST['message']);
+	if (trim($_POST['message']) == '') {
+		$hasError = true;
+	} else {
+		if (function_exists('stripslashes')) {
+			$comments = stripslashes(trim($_POST['message']));
+		} else {
+			$comments = trim($_POST['message']);
 		}
 	}
 	//If there is no error, send the email
-	if(!isset($hasError)) {
-	$emailTo='rubengmoura@gmail.com';
-	//Put your own email address here
-	$body="Name: $name \n\nEmail: $email \n\nSubject: $subject \n\nComments:\n $comments";
-	$headers='From: My Site <'.$emailTo.'>'."\r\n".'Reply-To: '.$email;
-	mail($emailTo,$subject,$body,$headers);
-	$emailSent=true;
+	if (!isset($hasError)) {
+		$emailTo = 'rubengmoura@gmail.com';
+		//Put your own email address here
+		$body = "Name: $name \n\nEmail: $email \n\nSubject: $subject \n\nComments:\n $comments";
+		$headers = 'From: My Site <' . $emailTo . '>' . "\r\n" . 'Reply-To: ' . $email;
+		$mail_status = mail($emailTo, $subject, $body, $headers);
+		$emailSent = $mail_status;
 	}
 }
 ?>
@@ -65,6 +55,8 @@ if(isset($_POST['submit'])) {
 		<link rel="stylesheet" type="text/css" href="/Materiare/css/base.css"  />
 
 		<link rel="stylesheet" type="text/css" href="/Materiare/css/orcamento.css"  />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
 		<script type="text/javascript">
 			$(document).ready(function() {
 				// validate signup form on keyup and submit
@@ -115,66 +107,66 @@ if(isset($_POST['submit'])) {
 	</head>
 	<body  >
 		<?php
-		include ($_SERVER['DOCUMENT_ROOT'].'/Materiare/header.html');
+		include ($_SERVER['DOCUMENT_ROOT'] . '/Materiare/header.html');
 		?>
 
 		<div id="main">
 
-		<div class="wrapper">
-			<div id="contactWrapper" role="form">
+			<div class="wrapper">
+				<div id="contactWrapper" role="form">
 
-				<h1 role="heading">Contacte-nos</h1>
-				<?php if(isset($hasError)) { //If errors are found
-				?>
-				<p class="error">
-					Please check if you've filled all the fields with valid information and try again. Thank you.
-				</p>
-				<?php } ?>
+					<h1 role="heading">Contacte-nos</h1>
+					<?php if(isset($hasError)) { //If errors are found
+					?>
+					<p class="error">
+						Please check if you've filled all the fields with valid information and try again. Thank you.
+					</p>
+					<?php } ?>
 
-				<?php if(isset($emailSent) && $emailSent == true) { //If email is sent ?>
-				<div class="success">
-					<p>
-						<strong>Email enviado!</strong>
-					</p>
-					<p>
-						Thank you for using our contact form <strong><?php echo $name; ?></strong>! Your email was successfully sent and we 'll be in touch with you soon.
-					</p>
+					<?php if(isset($emailSent) && $emailSent == true) { //If email is sent ?>
+					<div class="success">
+						<p>
+							<strong>Email enviado!</strong>
+						</p>
+						<p>
+							Thank you for using our contact form <strong><?php echo $name; ?></strong>! Your email was successfully sent and we 'll be in touch with you soon.
+						</p>
+					</div>
+					<?php } ?>
+
+					<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="contactform">
+						<div class="stage clear">
+							<label for="name"><strong>Nome: <em>*</em></strong></label>
+							<input type="text" name="contactname" id="contactname" value="" class="required" role="input" aria-required="true" />
+						</div>
+
+						<div class="stage clear">
+							<label for="email"><strong>Email: <em>*</em></strong></label>
+							<input type="text" name="email" id="email" value="" class="required email" role="input" aria-required="true" />
+						</div>
+
+						<div class="stage clear">
+							<label for="subject"><strong>Tema: <em>*</em></strong></label>
+							<input type="text" name="subject" id="subject" value="" class="required" role="input" aria-required="true" />
+						</div>
+
+						<div class="stage clear">
+							<label for="message"><strong>Mensagem: <em>*</em></strong></label>
+							<textarea rows="8" name="message" id="message" class="required" role="textbox" aria-required="true"></textarea>
+						</div>
+
+						<p class="requiredNote">
+							<em>*</em> Obrigatório.
+						</p>
+
+						<input type="submit"  value="Send Message" name="submit" id="submitButton" title="Click here to submit your message!"/>
+					</form>
 				</div>
-				<?php } ?>
-
-				<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="contactform">
-					<div class="stage clear">
-						<label for="name"><strong>Nome: <em>*</em></strong></label>
-						<input type="text" name="contactname" id="contactname" value="" class="required" role="input" aria-required="true" />
-					</div>
-
-					<div class="stage clear">
-						<label for="email"><strong>Email: <em>*</em></strong></label>
-						<input type="text" name="email" id="email" value="" class="required email" role="input" aria-required="true" />
-					</div>
-
-					<div class="stage clear">
-						<label for="subject"><strong>Tema: <em>*</em></strong></label>
-						<input type="text" name="subject" id="subject" value="" class="required" role="input" aria-required="true" />
-					</div>
-
-					<div class="stage clear">
-						<label for="message"><strong>Mensagem: <em>*</em></strong></label>
-						<textarea rows="8" name="message" id="message" class="required" role="textbox" aria-required="true"></textarea>
-					</div>
-
-					<p class="requiredNote">
-						<em>*</em> Obrigatório.
-					</p>
-
-					<input type="submit" value="Send Message" name="submit" id="submitButton" title="Click here to submit your message!" />
-				</form>
 			</div>
 		</div>
-		</div>
 		<?php
-		include ($_SERVER['DOCUMENT_ROOT'].'/Materiare/footer.html');
+		include ($_SERVER['DOCUMENT_ROOT'] . '/Materiare/footer.html');
 		?>
-		
+
 	</body>
 </html>
